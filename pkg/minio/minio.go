@@ -1,6 +1,7 @@
 package minio
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -19,7 +20,7 @@ func ConnectToMinio() *MinioClient {
 	// Load environment variables from the .env file
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatalf("Error loading .env file")
+		fmt.Println("Warning: .env file not found, relying on environment variables")
 	}
 
 	// MinIO connection details from environment variables

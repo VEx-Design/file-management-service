@@ -34,7 +34,7 @@ func (h *UploadHandler) UploadImage(c *gin.Context) {
 	// Call the repository's UploadImage method to upload the file to MinIO
 	err = h.repository.UploadImage(bucketName, fileName, file)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to upload image"})
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to upload image" + err.Error()})
 		return
 	}
 

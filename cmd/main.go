@@ -34,5 +34,5 @@ func main() {
 	r.GET("/getbucket/:bucketName", uploadHandler.GetAllImages)
 	r.GET("/getimg/:bucketName/:fileName", uploadHandler.GetImage)
 	// Start the server
-	r.Run(":8080")
+	r.Run(":8088")
 }
